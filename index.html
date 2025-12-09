@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NavBar</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-text">NavBar</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <button class="nav-btn" data-page="square">
+                        <span class="btn-text">Cuadrado</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-btn" data-page="calculator">
+                        <span class="btn-text">Calculadora</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-btn logout-btn" id="logout-btn">
+                        <span class="btn-text">Cerrar Sesión</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="main-container">
+        <!-- PÁGINA INICIO -->
+        <div class="page active" id="home">
+            <div class="welcome-section">
+                <h1 class="welcome-title">Bienvenido al NavBar</h1>
+                <p class="welcome-text">Selecciona una opción en el menú para comenzar</p>
+            </div>
+        </div>
+
+        <!-- PÁGINA CUADRADO -->
+        <div class="page" id="square">
+            <div class="content-wrapper">
+                <h1 class="page-title">Generador de Cuadrados</h1>
+                <div class="square-container">
+                    <div class="input-group">
+                        <label for="square-size">Tamaño del cuadrado (px):</label>
+                        <input type="number" id="square-size" min="50" max="500" value="150" class="input-field">
+                        <label for="square-color">Color:</label>
+                        <input type="color" id="square-color" value="#9D4EDD" class="input-field color-picker">
+                        <button class="btn-primary" id="generate-square">Generar Cuadrado</button>
+                    </div>
+                    <div class="square-display">
+                        <div id="square" class="square"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PÁGINA CALCULADORA -->
+        <div class="page" id="calculator">
+            <div class="content-wrapper">
+                <h1 class="page-title">Calculadora</h1>
+                <div class="calculator">
+                    <div class="calculator-display">
+                        <input type="text" id="display" class="display" readonly value="0">
+                    </div>
+                    <div class="calculator-buttons">
+                        <button class="calc-btn clear-btn" data-value="C">C</button>
+                        <button class="calc-btn delete-btn" data-value="DEL">DEL</button>
+                        <button class="calc-btn operator-btn" data-value="/">/</button>
+                        <button class="calc-btn operator-btn" data-value="*">×</button>
+
+                        <button class="calc-btn" data-value="7">7</button>
+                        <button class="calc-btn" data-value="8">8</button>
+                        <button class="calc-btn" data-value="9">9</button>
+                        <button class="calc-btn operator-btn" data-value="-">−</button>
+
+                        <button class="calc-btn" data-value="4">4</button>
+                        <button class="calc-btn" data-value="5">5</button>
+                        <button class="calc-btn" data-value="6">6</button>
+                        <button class="calc-btn operator-btn" data-value="+">+</button>
+
+                        <button class="calc-btn" data-value="1">1</button>
+                        <button class="calc-btn" data-value="2">2</button>
+                        <button class="calc-btn" data-value="3">3</button>
+                        <button class="calc-btn decimal-btn" data-value=".">.</button>
+
+                        <button class="calc-btn zero-btn" data-value="0">0</button>
+                        <button class="calc-btn equals-btn" data-value="=">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CERRAR SESIÓN -->
+    <div class="modal" id="logout-modal">
+        <div class="modal-content">
+            <h2>Confirmar cierre de sesión</h2>
+            <p>¿Estás seguro de que deseas cerrar sesión?</p>
+            <div class="modal-buttons">
+                <button class="btn-cancel" id="cancel-logout">Cancelar</button>
+                <button class="btn-confirm" id="confirm-logout">Cerrar Sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
